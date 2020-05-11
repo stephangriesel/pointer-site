@@ -22,6 +22,7 @@ export default () => {
     <>
       <SEO />
       <p>Index Page</p>
+      <h1>Static Query Posts</h1>
       <Posts />
     </>
   )
