@@ -1,13 +1,22 @@
-import React from 'react'
+import React from "react"
+import { graphql } from "gatsby"
 
-const PostTemplate = (props) => {
-    console.log('<< PROPS RECEIVED FROM POST PAGE >>')
-    console.log(props)
-    return (
-        <div>
-            post template, coming soon!
-        </div>
-    )
-}
+const PostTemplate = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
 
-export default PostTemplate;
+export const query = graphql`
+query GetSinglePost($slug:String) {
+    post: contentfulPost(slug: {eq: $slug}) {
+      title
+      postText {
+        postText
+      }
+      image {
+        fluid {
+          src
+        }
+      }
+    }
+  }
+`
+
+export default PostTemplate
