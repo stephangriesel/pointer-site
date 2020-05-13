@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import SEO from './components/SEO';
-import Posts from './components/posts';
+import SEO from '../components/SEO';
+import Posts from '../components/posts';
 
 const getData = graphql`
     {
