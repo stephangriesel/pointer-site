@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import SEO from '../components/SEO';
 import Posts from '../components/posts';
 
@@ -23,6 +23,7 @@ export default () => {
       <SEO />
       <p>Index Page</p>
       <h1>Static Query Posts</h1>
+      <Link to="/posts">Posts page</Link>
       <Posts />
     </>
   )

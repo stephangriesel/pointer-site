@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from '../components/Layout'
 import Image from 'gatsby-image'
 import { Link } from 'gatsby'
+import style from '../css/post.module.css'
 
 const PostsPageComponent = ({ data }) => {
   // console.log(data);
@@ -19,16 +20,23 @@ const PostsPageComponent = ({ data }) => {
     // </>
     // Test: END
     <Layout>
-      <section>
+      <section className={style.postWrapper}>
         {posts.map(post => {
           console.log(post)
-          return <article key={post.id}>
-            <Image fluid={post.image.fluid} alt={post.title}></Image>
-            <h1>{post.title}</h1>
-            <Link to={`/posts/${post.slug}`}>Read more</Link>
-          </article>
+          return <section key={post.id}>
+            <article>
+              <Image fluid={post.image.fluid} alt={post.title}></Image>
+            </article>
+            <article>
+              <h1>{post.title}</h1>
+              <Link to={`/posts/${post.slug}`}>Read more</Link>
+            </article>
+          </section>
         })}
       </section>
+      <div>
+        <Link to="/">Back to homepage</Link>
+      </div>
     </Layout>
   )
 }
