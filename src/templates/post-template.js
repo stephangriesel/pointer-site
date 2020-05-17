@@ -5,11 +5,11 @@ import Image from 'gatsby-image'
 
 // Test DATA:
 // const PostTemplate = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
-const PostTemplate = ({ data: { post: { title, image: { fluid }, postText: { postText } } } }) => {
+const PostTemplate = ({ data: { post: { title, image: { fixed }, postText: { postText } } } }) => {
   return <Layout>
     <section>
       <article>
-        <Image fluid={fluid} alt={title} />
+        <Image fixed={fixed} alt={title} />
       </article>
       <article>
         <h1>{title}</h1>
@@ -27,8 +27,8 @@ query GetSinglePost($slug:String) {
         postText
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid
+        fixed {
+          ...GatsbyContentfulFixed
         }
       }
     }

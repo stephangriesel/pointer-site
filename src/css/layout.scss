@@ -1,7 +1,21 @@
-// #gatsby-focus-wrapper {
-//   width: 100%;
-//   max-width: 780px;
-//   justify-content: center;
-//   align-items: center;
-//   align-content: center;
-// }
+#gatsby-focus-wrapper {
+  margin: 0 auto;
+  max-width: 780px;
+}
+
+.post-wrapper {
+  display: flex;
+}
+
+.img-wrapper {
+}
+
+.single-img {
+}
+
+@media screen and (max-width: 992px) {
+  .post-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
