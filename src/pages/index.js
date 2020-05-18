@@ -20,7 +20,7 @@ export default () => {
   console.log(response);
   return (
     <>
-      <SEO />
+      <SEO title="Main Page" />
       <p>Index Page</p>
       <h1>Static Query Posts</h1>
       <Link to="/posts">Posts page</Link>

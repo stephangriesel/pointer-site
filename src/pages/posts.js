@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from '../components/Layout'
 import Image from 'gatsby-image'
 import { Link } from 'gatsby'
+import SEO from '../components/SEO'
 // import style from '../css/post.module.css'
 
 const PostsPageComponent = ({ data }) => {
@@ -20,6 +21,7 @@ const PostsPageComponent = ({ data }) => {
     // </>
     // Test: END
     <Layout>
+      <SEO title="Blog" />
       <section>
         {posts.map(post => {
           console.log(post)
@@ -29,6 +31,7 @@ const PostsPageComponent = ({ data }) => {
             </article>
             <article>
               <h1>{post.title}</h1>
+              <p>{post.shortText}</p>
               <Link to={`/posts/${post.slug}`}>Read more</Link>
             </article>
           </section>
@@ -61,7 +64,11 @@ export const data = graphql`
           ...GatsbyContentfulFixed
         }
       }
+      postText {
+        postText
+      }
       id
+      shortText
     }
   }
 }
